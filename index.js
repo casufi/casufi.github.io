@@ -5,8 +5,6 @@
 (function () {
     var placeholder = document.getElementsByClassName('placeholder');
 	if (placeholder) placeholder = placeholder[0];
-	if (placeholder && placeholder.style) console.log(typeof placeholder.style);
-	console.log(placeholder);
-	//.style.display='none';
+	if (placeholder && placeholder.style) placeholder.style.display='none';
  }());
 	
