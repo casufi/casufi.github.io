@@ -6,7 +6,7 @@
        <th>E-mail</th>
     </tr>
     <tr ng-repeat="user in users">
-       <td></td> 
+       <td><div class="round avatar-container"><img src="{{user.avatar_url}}"></img><div></td> 
        <td><a href="#/githubuser/{{user.login}}">{{user.login}}</a></td>
        <td></td>
     </tr>

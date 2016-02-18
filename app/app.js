@@ -10,4 +10,5 @@
 			templateUrl:'/app/views/githubuser.html'
 		}).otherwise({redirectTo:'/'});
 	});
+	app.$inject = ['$routeProvider'];
  }());
