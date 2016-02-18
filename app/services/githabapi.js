@@ -1,13 +1,13 @@
 (function () {
     var githubApiService = function($http){
         
-        var users = $http.get('https://api.github.com/users');
-        
         this.getUsers = function(){
+          var users = $http.get('https://api.github.com/users');
           return users;  
         };
         this.getUser = function(userName){
-          return {};  
+          var user = $http.get('https://api.github.com/users/'+userName);
+          return user;
         };
     };
     githubApiService.$inject = ['$http'];
