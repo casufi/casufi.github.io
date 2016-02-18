@@ -2,10 +2,12 @@
 <table>
     <tr>
        <th>&nbsp;</th> 
-       <th>Информация</th>
+       <th>Login</th>
+       <th>E-mail</th>
     </tr>
     <tr ng-repeat="user in users">
-       <td>{{user.login}}</td> 
+       <td></td> 
+       <td><a href="#/githubuser/{{user.login}}">{{user.login}}</a></td>
        <td></td>
     </tr>
 </table>
