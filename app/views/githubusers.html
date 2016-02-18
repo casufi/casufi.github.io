@@ -7,7 +7,8 @@
     </tr>
     <tr ng-repeat="user in users">
        <td><div class="round avatar-container"><img src="{{user.avatar_url}}"></img><div></td> 
-       <td><a href="#/githubuser/{{user.login}}">{{user.login}}</a></td>
+       <td ng-if="user.userdata"><a href="#/githubuser/{{user.login}}">{{user.login}}</a></td>
+       <td ng-if="!user.userdata">{{user.login}}</td>
        <td>{{user.userdata.email}}</td>
     </tr>
 </table>
