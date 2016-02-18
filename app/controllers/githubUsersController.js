@@ -1,6 +1,5 @@
 (function () {
     var githubUsersController = function($scope, githubApiService){
-        console.log ('got controller');
         githubApiService.getUsers()
         .success(function(users){
             if (typeof users.forEach === "function"){
@@ -9,7 +8,6 @@
                     .success(function(user){
                         element.userdata = user;
                         githubApiService.setUsersCashed(users);
-                        if (!user.email)console.log({"user":user});
                     })
                     .error(function(data, status, headers, config){
                         element.userdata = {};

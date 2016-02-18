@@ -1,1 +1,28 @@
 <h2>Github user {{githubuser.login}}</h2>
+<img class="avatar" ng-if="githubuser.avatar_url" src="{{githubuser.avatar_url}}"></img>
+<img class="avatar" ng-if="!githubuser.avatar_url" src="/img/anonymous.png"></img>
+<section class="userinfo">
+    full name:{{githubuser.name}}<br>
+    e-mail:{{githubuser.email}}<br>
+</section>
+<section ng-if="githubuser.repos" class="repos">
+    <table>
+        <tr>
+            <th colspan="2">Repos</th>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Id</th>
+            <th>Description</th>
+        </tr>
+        <tr ng-repeat="repo in githubuser.repos">
+            <td ng-if="!repo.commits_url">{{repo.full_name}}</td>
+            <td ng-if="repo.commits_url"><a href="/#/repo/{{repo.id}}">{{repo.full_name}}</a></td>
+            <td>{{repo.owner.login}}</td>
+            <td>{{repo.id}}</td>
+            <td>{{repo.description}}</td>
+        </tr>
+    </table>
+</section>
+

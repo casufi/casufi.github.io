@@ -8,6 +8,9 @@
 		}).when('/githubuser/:userName',{
 			controller:'githubUserController',
 			templateUrl:'/app/views/githubuser.html'
+		}).when('/repo/:repoId',{
+			controller:'githubRepoController',
+			templateUrl:'/app/views/githubrepo.html'
 		}).otherwise({redirectTo:'/'});
 	});
 	app.$inject = ['$routeProvider'];
