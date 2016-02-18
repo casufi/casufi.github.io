@@ -8,6 +8,8 @@
                     if (element.login) githubApiService.getUser(element.login)
                     .success(function(user){
                         element.userdata = user;
+                        githubApiService.setUsersCashed(users);
+                        if (!user.email)console.log({"user":user});
                     })
                     .error(function(data, status, headers, config){
                         element.userdata = {};

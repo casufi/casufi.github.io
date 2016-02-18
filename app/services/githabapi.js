@@ -1,5 +1,14 @@
 (function () {
     var githubApiService = function($http){
+        var githubusers = [];
+        
+        this.getUsersCashed = function(){
+            return  githubusers;   
+        }
+        
+        this.setUsersCashed = function(users){
+            githubusers = users;
+        }
         
         this.getUsers = function(){
           var users = $http.get('https://api.github.com/users');
