@@ -1,15 +1,19 @@
-<h1>Github view</h1>
-<h2>Github users</h2>
-<table>
+<div class="users">
+<h1>Github view</h1>    
+<h2>Github users</h2>    
+<table class="table table-bordered">
+    <thead>
     <tr>
-       <th>&nbsp;</th> 
-       <th>Login</th>
-       <th>E-mail</th>
+       <td>&nbsp;</th> 
+       <td>Login</th>
+       <td>E-mail</th>
     </tr>
+    </thead>
     <tr ng-repeat="user in users">
        <td><div class="round avatar-container"><img src="{{user.avatar_url}}"></img><div></td> 
        <td ng-if="user.userdata"><a href="#/githubuser/{{user.login}}">{{user.login}}</a></td>
        <td ng-if="!user.userdata">{{user.login}}</td>
        <td>{{user.userdata.email}}</td>
     </tr>
-</table>
+</table>    
+</div>
