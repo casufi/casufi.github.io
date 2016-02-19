@@ -18,7 +18,7 @@
         </tr>
         <tr ng-repeat="repo in githubuser.repos">
             <td ng-if="!repo.commits_url">{{repo.full_name}}</td>
-            <td ng-if="repo.commits_url"><a href="/#/repo/{{repo.id}}">{{repo.full_name}}</a></td>
+            <td ng-if="repo.commits_url"><a href="/#/repo/{{githubuser.login}}/{{repo.name}}">{{repo.full_name}}</a></td>
             <td>{{repo.owner.login}}</td>
             <td>{{repo.id}}</td>
             <td>{{repo.description}}</td>

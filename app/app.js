@@ -8,7 +8,7 @@
 		}).when('/githubuser/:userName',{
 			controller:'githubUserController',
 			templateUrl:'/app/views/githubuser.html'
-		}).when('/repo/:repoId',{
+		}).when('/repo/:ownerName/:repoName',{
 			controller:'githubRepoController',
 			templateUrl:'/app/views/githubrepo.html'
 		}).otherwise({redirectTo:'/'});
