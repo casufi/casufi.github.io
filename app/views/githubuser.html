@@ -1,7 +1,8 @@
+<div class="panel center user">
 <h1><a href="/#/">Github view</a></h1>
 <h2>Github user {{githubuser.login}}</h2>
-<img class="avatar" ng-if="githubuser.avatar_url" src="{{githubuser.avatar_url}}"></img>
-<img class="avatar" ng-if="!githubuser.avatar_url" src="/img/anonymous.png"></img>
+<img class="fullavatar" ng-if="githubuser.avatar_url" src="{{githubuser.avatar_url}}"></img>
+<img class="fullavatar" ng-if="!githubuser.avatar_url" src="/img/anonymous.png"></img>
 <section class="userinfo">
     full name:{{githubuser.name}}<br>
     e-mail:{{githubuser.email}}<br>
@@ -26,4 +27,4 @@
         </tr>
     </table>
 </section>
-
+<div class="panel user">

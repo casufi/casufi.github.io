@@ -1,7 +1,27 @@
-<div class="users">
+<section class="panel center users">
+<header>
 <h1>Github view</h1>    
-<h2>Github users</h2>    
-<table class="table table-bordered">
+<h2>Github users</h2> 
+</header>
+<section class="userlabels">
+    <ul class="lablesshowcase">
+        <li ng-repeat="user in users">
+            <figure class="userlabel">
+                <div class="round avatar-container">
+                    <a ng-if="user.userdata" href="#/githubuser/{{user.login}}"><img src="{{user.avatar_url}}" alt="{{user.login}}"></img></a>
+                    <img ng-if="!user.userdata" src="{{user.avatar_url}}" alt="{{user.login}}"></img>
+                </div>
+                <div class="text-container">
+                    <span ng-if="user.userdata"><a href="#/githubuser/{{user.login}}">{{user.login}}</a></span>
+                    <span ng-if="!user.userdata">{{user.login}}</span>
+                    <span>{{user.userdata.email}}</span>
+                </div>
+            </figure>
+        </li>
+    </ul>
+</section>
+<!--
+<table class="table table-fixed">
     <thead>
     <tr>
        <td>&nbsp;</th> 
@@ -9,11 +29,14 @@
        <td>E-mail</th>
     </tr>
     </thead>
+    <tbody>
     <tr ng-repeat="user in users">
        <td><div class="round avatar-container"><img src="{{user.avatar_url}}"></img><div></td> 
        <td ng-if="user.userdata"><a href="#/githubuser/{{user.login}}">{{user.login}}</a></td>
        <td ng-if="!user.userdata">{{user.login}}</td>
        <td>{{user.userdata.email}}</td>
     </tr>
-</table>    
-</div>
+    </tbody>
+</table>   
+-->
+</section>
