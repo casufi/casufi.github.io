@@ -13,8 +13,13 @@
         }
         
         $scope.githubuser = githubApiService.getUserCashed(userName);
+        console.log("Check if with repos");
+        console.log($scope.githubuser.repos);
         
-        if ($scope.githubuser && !$scope.githubuser.repos) fillRepos($scope.githubuser);
+        if ($scope.githubuser && !$scope.githubuser.repos) {
+            console.log("check if repost cashe is working");
+            fillRepos($scope.githubuser);   
+        }
         if ((!$scope.githubuser||!$scope.githubuser.login) && userName){
             githubApiService.getUser(userName)
             .success(function(user){

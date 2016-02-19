@@ -1,0 +1,14 @@
+<h2>Github repo: {{githubrepo.full_name}}</h2>
+<section ng-if="githubrepo.commits" class="commits">
+<table>
+    <tr>
+        <th>Sha</th>
+        <th>Date</th>
+        <th>Author</th>
+    </tr>
+    <tr ng-repeat="commit in githubrepo.commits">
+        <td>{{commit.sha}}</td>
+        <td>{{commit.commit.author.date}}</td>
+        <td>{{commit.commit.author.name}}</td>
+    </tr>
+</table>

@@ -50,6 +50,41 @@
                 return {}
             }
         };
+        this.getUserRepo = function(username,reponame){
+          var repo = $http.get("https://api.github.com/repos/"+username+"/"+reponame);
+          return repo;
+        };
+        /*
+        this.setUserRepo = function(repolink){
+          var repos = $http.get(repolink);
+          return repos;
+        };
+        */
+        this.getUserRepoCashed = function(username,reponame){
+            if (typeof githubusers.filter === "function" && username){
+                var filteredusers = githubusers.filter(function(element){
+                    if (element && element.login && element.login === username && element.userdata) return 1
+                    else return 0;
+                });
+                if (filteredusers && filteredusers[0] && filteredusers[0].userdata && filteredusers[0].userdata.repos && typeof filteredusers[0].userdata.repos.filter === "function" && reponame){
+                    var repos = filteredusers[0].userdata.repos;
+                    var filteredrepos = repos.filter(function(element){
+                        if (element && element.name && element.name === reponame && element.commits_url) return 1
+                        else return 0;
+                    });
+                    if (filteredrepos && filteredrepos[0]) return filteredrepos[0]
+                    else return{}
+                } 
+                else return {}
+            }else{
+                return {}
+            }
+        };
+        
+        this.getRepoCommits = function(user, repo){
+          var commits = $http.get('https://api.github.com/repos/'+user+'/'+repo+'/commits');
+          return commits;
+        };
         
 
     };
