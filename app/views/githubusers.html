@@ -1,19 +1,23 @@
-<section class="panel center users">
+<section class="center users">
 <header>
 <h1>Github view</h1>    
 <h2>Github users</h2> 
 </header>
-<section class="userlabels">
+<section class="userlabels clearfix">
     <ul class="lablesshowcase">
         <li ng-repeat="user in users">
-            <figure class="userlabel">
+            <!--<figure class="userlabel">-->
+            <figure class="clearfix">
+                <!--<div class="round avatar-container left">-->
                 <div class="round avatar-container">
                     <a ng-if="user.userdata" href="#/githubuser/{{user.login}}"><img src="{{user.avatar_url}}" alt="{{user.login}}"></img></a>
                     <img ng-if="!user.userdata" src="{{user.avatar_url}}" alt="{{user.login}}"></img>
                 </div>
-                <div class="text-container">
+                <div class="login">
                     <span ng-if="user.userdata"><a href="#/githubuser/{{user.login}}">{{user.login}}</a></span>
                     <span ng-if="!user.userdata">{{user.login}}</span>
+                </div>
+                <div class="email">
                     <span>{{user.userdata.email}}</span>
                 </div>
             </figure>

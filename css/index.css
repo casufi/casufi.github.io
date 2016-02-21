@@ -32,9 +32,9 @@ h3{
     overflow:hidden;
     width:50px;
     height:50px;
-    margin-top:3px;
-    margin-bottom:3px;
+    margin:3px;  
 }
+
 .avatar-container img{
     width:100%;
     height:auto;
@@ -45,29 +45,16 @@ h3{
 }
 
 .center {
+    max-width:900px;
+    margin: 0px auto;    
+}
+
+.users {
     /*float:left;*/
     padding-left:20px;
     padding-right:20px;
     background-color:white;
-}
-.user {
-    width:780px;
-    margin:auto;    
-}
-.users {
-    max-width:900px;
-    margin:auto;    
-}
-.center table{
-    width:100%;
-}
-
-.users>table>tbody>tr>td{
-    vertical-align:middle;
-}
-
-.avatar{
-    width:55px;
+    border-radius: 5px;
 }
 
 /*---------------------------------------------*/
@@ -75,7 +62,8 @@ h3{
 /*---------------------------------------------*/
 .lablesshowcase{
     width:100%;
-    float:left;
+    /*float:left;*/
+   /*overflow:hidden;*/
     list-style:none;
 }
 
@@ -88,8 +76,29 @@ h3{
     border-radius:15px;
     margin:5px;
     padding:5px;
+    transition: top 0.3s ease;
+    position:relative;
+    top:0px;
 }
-
+.lablesshowcase li:hover {
+    float: left;
+    display:block;
+    width:230px;
+    height:100px;
+    border: 1px solid rgb(200,200,2000);
+    border-radius:15px;
+    margin:5px;
+    padding:5px;
+    transition: top 0s;
+    position:relative;
+    top:-3px;
+}
 .lablesshowcase li figure{
     width:100%;
+}
+.left{
+    float:left;
+}
+.clearfix{
+    clear:both;
 }
