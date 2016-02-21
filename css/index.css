@@ -8,6 +8,20 @@ body{
     box-sizing: border-box;
     padding:10px;
 }
+
+.center {
+    max-width:900px;
+    margin: 0px auto;    
+}
+
+.users {
+    padding-top:10px;
+    padding-left:20px;
+    padding-right:20px;
+    background-color:white;
+    border-radius: 5px;
+}
+
 h1{
     font-size:2em;
     padding-bottom:15px;
@@ -44,18 +58,6 @@ h3{
     border-radius: 50%;
 }
 
-.center {
-    max-width:900px;
-    margin: 0px auto;    
-}
-
-.users {
-    /*float:left;*/
-    padding-left:20px;
-    padding-right:20px;
-    background-color:white;
-    border-radius: 5px;
-}
 
 /*---------------------------------------------*/
 /* Label section                               */
@@ -72,7 +74,7 @@ h3{
     display:block;
     width:230px;
     height:100px;
-    border: 1px solid rgb(200,200,2000);
+    border: 2px solid rgb(200,200,200);
     border-radius:15px;
     margin:5px;
     padding:5px;
@@ -85,7 +87,7 @@ h3{
     display:block;
     width:230px;
     height:100px;
-    border: 1px solid rgb(200,200,2000);
+    border: 2px solid rgb(200,200,200);
     border-radius:15px;
     margin:5px;
     padding:5px;

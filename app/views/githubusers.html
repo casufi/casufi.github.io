@@ -6,16 +6,25 @@
 <section class="userlabels clearfix">
     <ul class="lablesshowcase">
         <li ng-repeat="user in users">
-            <!--<figure class="userlabel">-->
+            <a ng-if="user.userdata" href="#/githubuser/{{user.login}}">
             <figure class="clearfix">
-                <!--<div class="round avatar-container left">-->
                 <div class="round avatar-container">
-                    <a ng-if="user.userdata" href="#/githubuser/{{user.login}}"><img src="{{user.avatar_url}}" alt="{{user.login}}"></img></a>
-                    <img ng-if="!user.userdata" src="{{user.avatar_url}}" alt="{{user.login}}"></img>
+                    <img src="{{user.avatar_url}}" alt="{{user.login}}"></img>
                 </div>
                 <div class="login">
-                    <span ng-if="user.userdata"><a href="#/githubuser/{{user.login}}">{{user.login}}</a></span>
-                    <span ng-if="!user.userdata">{{user.login}}</span>
+                    <span ng-if="user.userdata">{{user.login}}</span>
+                </div>
+                <div class="email">
+                    <span>{{user.userdata.email}}</span>
+                </div>
+            </figure>
+            </a>
+            <figure ng-if="!user.userdata" class="clearfix">
+                <div class="round avatar-container">
+                    <img src="{{user.avatar_url}}" alt="{{user.login}}"></img>
+                </div>
+                <div class="login">
+                    <span ng-if="user.userdata">{{user.login}}</span>
                 </div>
                 <div class="email">
                     <span>{{user.userdata.email}}</span>
