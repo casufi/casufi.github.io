@@ -136,3 +136,56 @@ h3{
     padding-top:5px;
     padding-left:20px;
 }
+
+/*---------------------------------------*/
+/*-------full user info------------------*/
+/*---------------------------------------*/
+.fullavatar{
+    float:left;
+    width:50%;
+    min-width:390px;
+}
+.fullavatar img{
+    width:100%;
+    height:auto;
+    border-radius:5px;
+}
+.userinfo{
+    float:right;
+    width:50%;
+    min-width:390px;
+    padding:20px;
+}
+.repos h2{
+    margin-top:15px;
+}
+.repos tr th {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:rgb(200,200,200);
+}
+.repos tr td {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgb(200,200,200);
+}
+
+@media (max-width: 850px) {
+    .fullavatar{
+        width:auto;
+        float: none;
+    }    
+    .fullavatar img{
+        width:auto;
+        height:auto;
+        border-radius:5px;
+    }    
+    .userinfo{
+        width:auto;
+        float: none;
+    }
+}

@@ -1,17 +1,17 @@
-<div class="panel center user">
+<div class="user">
 <h1><a href="/#/">Github view</a></h1>
-<h2>Github user {{githubuser.login}}</h2>
-<img class="fullavatar" ng-if="githubuser.avatar_url" src="{{githubuser.avatar_url}}"></img>
-<img class="fullavatar" ng-if="!githubuser.avatar_url" src="/img/anonymous.png"></img>
+<div class="fullavatar">
+  <img class="fullavatar-img" ng-if="githubuser.avatar_url" src="{{githubuser.avatar_url}}"></img>
+  <img class="fullavatar-img" ng-if="!githubuser.avatar_url" src="/img/anonymous.png"></img>
+</div>
 <section class="userinfo">
-    full name:{{githubuser.name}}<br>
-    e-mail:{{githubuser.email}}<br>
+    <h2>Github user {{githubuser.login}}</h2>
+    Fullname: {{githubuser.name}}<br>
+    E-mail: {{githubuser.email}}<br>
 </section>
-<section ng-if="githubuser.repos" class="repos">
+<section ng-if="githubuser.repos" class="repos clearfix">
+    <h2>Repositories:</h2>
     <table>
-        <tr>
-            <th colspan="2">Repos</th>
-        </tr>
         <tr>
             <th>Name</th>
             <th>Author</th>
