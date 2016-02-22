@@ -10,18 +10,21 @@ body{
 }
 
 .center {
-    max-width:900px;
+    max-width:950px;
+    min-width:340px;
     margin: 0px auto;    
-}
-
-.users {
     padding-top:10px;
+    padding-bottom:40px;
     padding-left:20px;
     padding-right:20px;
     background-color:white;
-    border-radius: 5px;
+    border-radius: 5px;    
 }
+/*
+.users {
 
+}
+*/
 h1{
     font-size:2em;
     padding-bottom:15px;
@@ -40,12 +43,6 @@ h3{
     background-color: white;
     height: 100vh;
     width: 100vw;
-}
-.left{
-    float:left;
-}
-.clearfix{
-    clear:both;
 }
 /*---------------------------------------------*/
 /* Label section                               */
@@ -96,6 +93,15 @@ h3{
     width:100%;
 }
 
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+.clearfix{
+    clear:both;
+}
 .avatar-container {
     overflow:hidden;
     width:50px;
@@ -110,4 +116,23 @@ h3{
 
 .round{
     border-radius: 50%;
+}
+
+.login-container{
+    height:50px;
+    width:150px;
+    position:relative;
+}
+.login-text{
+    font-size:1.2em;
+    font-weight:600;
+    position:absolute;
+    width:150px;
+    top:50%;
+    left:3px;
+    transform:translate(0px,-50%);
+}
+.email{
+    padding-top:5px;
+    padding-left:20px;
 }
