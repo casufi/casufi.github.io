@@ -1,7 +1,8 @@
 <h1><a href="/#/">Github view</a></h1>
-<h2>Github repo: {{githubrepo.full_name}}</h2>
+<h2>Repository:&nbsp;{{githubrepo.full_name}}</h2>
 <section ng-if="githubrepo.commits" class="commits">
-<table>
+<h2>Commits:</h2>
+<table ng-if="githubrepo.commits">
     <tr>
         <th>Sha</th>
         <th>Date</th>

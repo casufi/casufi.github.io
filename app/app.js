@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('appMLSDevTA',['ngRoute']);
+    var app = angular.module('appMLSDevTA',['ngRoute', 'ngAnimate']);
     
 	app.config(function($routeProvider){
 		$routeProvider.when('/',{

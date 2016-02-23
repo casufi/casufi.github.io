@@ -9,9 +9,9 @@
     Fullname: {{githubuser.name}}<br>
     E-mail: {{githubuser.email}}<br>
 </section>
-<section ng-if="githubuser.repos" class="repos clearfix">
+<section class="repos clearfix">
     <h2>Repositories:</h2>
-    <table>
+    <table ng-if="githubuser.repos">
         <tr>
             <th>Name</th>
             <th>Author</th>

@@ -156,21 +156,25 @@ h3{
     min-width:390px;
     padding:20px;
 }
-.repos h2{
+.repos h2,
+.commits h2{
     margin-top:15px;
 }
-.repos table {
+.repos table ,
+.commits table{
     width:100%;
 }
 
-.repos tr th {
+.repos tr th ,
+.commits tr th{
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color:rgb(200,200,200);
 }
-.repos tr td {
+.repos tr td,
+.commits tr td{
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 3px;

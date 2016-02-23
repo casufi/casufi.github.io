@@ -1,0 +1,10 @@
+.fadein-animation {
+    opacity:1;   
+}
+.fadein-animation.ng-enter,
+.fadein-animation.ng-leave {
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function:ease;
+    opacity:0.5;
+}
