@@ -136,6 +136,13 @@ h3{
     padding-top:5px;
     padding-left:20px;
 }
+.imgnotloaded{
+    display:none !important;
+}
+.imgloaded{
+    display:block !important;    
+}
+
 
 /*---------------------------------------*/
 /*-------full user info------------------*/

@@ -5,11 +5,11 @@
 </header>
 <section class="userlabels clearfix">
     <ul class="lablesshowcase">
-        <li ng-repeat="user in users">
+        <li ng-repeat="user in users" >
             <a ng-if="user.userdata" href="#/githubuser/{{user.login}}">
-            <figure>
+            <figure ng-class="(user.imgloaded)?'imgloaded':'imgnotloaded'">
                 <div class="left round avatar-container">
-                    <img src="{{user.avatar_url}}" alt="{{user.login}}"></img>
+                    <img ng-src="{{user.avatar_url}}" image-onload="setImgLoaded(user)" alt="{{user.login}}"></img>
                 </div>
                 <div class="right login-container">
                     <div class="login-text" ng-if="user.userdata">{{user.login}}</div>
@@ -19,9 +19,9 @@
                 </div>
             </figure>
             </a>
-            <figure ng-if="!user.userdata">
+            <figure ng-if="!user.userdata" ng-class="(user.imgloaded)?'imgloaded':'imgnotloaded'">
                 <div class="left round avatar-container">
-                    <img src="{{user.avatar_url}}" alt="{{user.login}}"></img>
+                    <img ng-src="{{user.avatar_url}}" alt="{{user.login}}"></img>
                 </div>
                 <div class="right login-container">
                     <div class="login-text" ng-if="user.userdata">{{user.login}}</div>

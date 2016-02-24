@@ -1,5 +1,8 @@
 (function () {
     var githubUsersController = function($scope, githubApiService){
+        $scope.setImgLoaded= function(user){
+            user.imgloaded = 1;
+        }
         githubApiService.getUsers()
         .success(function(users){
             if (typeof users.forEach === "function"){

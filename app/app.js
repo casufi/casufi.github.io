@@ -14,4 +14,16 @@
 		}).otherwise({redirectTo:'/'});
 	});
 	app.$inject = ['$routeProvider'];
+	
+	app.directive('imageOnload', function() {
+    	return {
+        	restrict: 'A',
+        	link: function(scope, element, attrs) {
+            	element.bind('load', function() {
+                	scope.$apply(attrs.imageOnload);
+                	// usage: <img ng-src="src" image-onload="imgLoadedCallback()" />
+            	});
+        	}
+    	};
+	});
  }());

@@ -1,8 +1,8 @@
 <div class="user">
 <h1><a href="/#/">Github view</a></h1>
 <div class="fullavatar">
-  <img class="fullavatar-img" ng-if="githubuser.avatar_url" src="{{githubuser.avatar_url}}"></img>
-  <img class="fullavatar-img" ng-if="!githubuser.avatar_url" src="/img/anonymous.png"></img>
+  <img class="fullavatar-img" ng-if="githubuser.avatar_url" ng-src="{{githubuser.avatar_url}}"></img>
+  <img class="fullavatar-img" ng-if="!githubuser.avatar_url" ng-src="/img/anonymous.png"></img>
 </div>
 <section class="userinfo">
     <h2>Github user {{githubuser.login}}</h2>
