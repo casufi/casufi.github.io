@@ -1,55 +1,55 @@
 <section class="users">
 <header>
-<h1>Github view</h1>    
-<h2>Github users</h2> 
+<h1>Github view</h1>
+<h2>Github users</h2>
 </header>
 <section class="userlabels clearfix">
-    <ul class="lablesshowcase">
-        <li ng-repeat="user in users" >
-            <a ng-if="user.userdata" href="#/githubuser/{{user.login}}">
-            <figure ng-class="(user.imgloaded)?'imgloaded':'imgnotloaded'">
-                <div class="left round avatar-container">
-                    <img ng-src="{{user.avatar_url}}" image-onload="setImgLoaded(user)" alt="{{user.login}}"></img>
-                </div>
-                <div class="right login-container">
-                    <div class="login-text" ng-if="user.userdata">{{user.login}}</div>
-                </div>
-                <div class="email clearfix">
-                    <span>{{user.userdata.email}}</span>
-                </div>
-            </figure>
-            </a>
-            <figure ng-if="!user.userdata" ng-class="(user.imgloaded)?'imgloaded':'imgnotloaded'">
-                <div class="left round avatar-container">
-                    <img ng-src="{{user.avatar_url}}" alt="{{user.login}}"></img>
-                </div>
-                <div class="right login-container">
-                    <div class="login-text" ng-if="user.userdata">{{user.login}}</div>
-                </div>
-                <div class="email clearfix">
-                    <span>{{user.userdata.email}}</span>
-                </div>
-            </figure>
-        </li>
-    </ul>
+	<ul class="lablesshowcase">
+		<li ng-repeat="user in users" >
+			<a ng-if="user.userdata" href="#/githubuser/{{user.login}}">
+			<figure ng-class="(user.imgloaded)?'imgloaded':'imgnotloaded'">
+				<div class="left round avatar-container">
+					<img ng-src="{{user.avatar_url}}" image-onload="setImgLoaded(user)" alt="{{user.login}}"></img>
+				</div>
+				<div class="right login-container">
+					<div class="login-text" ng-if="user.userdata">{{user.login}}</div>
+				</div>
+				<div class="email clearfix">
+					<span>{{user.userdata.email}}</span>
+				</div>
+			</figure>
+			</a>
+			<figure ng-if="!user.userdata" ng-class="(user.imgloaded)?'imgloaded':'imgnotloaded'">
+				<div class="left round avatar-container">
+					<img ng-src="{{user.avatar_url}}" alt="{{user.login}}"></img>
+				</div>
+				<div class="right login-container">
+					<div class="login-text" ng-if="user.userdata">{{user.login}}</div>
+				</div>
+				<div class="email clearfix">
+					<span>{{user.userdata.email}}</span>
+				</div>
+			</figure>
+		</li>
+	</ul>
 </section>
 <!--
 <table class="table table-fixed">
-    <thead>
-    <tr>
-       <td>&nbsp;</th> 
-       <td>Login</th>
-       <td>E-mail</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="user in users">
-       <td><div class="round avatar-container"><img src="{{user.avatar_url}}"></img><div></td> 
-       <td ng-if="user.userdata"><a href="#/githubuser/{{user.login}}">{{user.login}}</a></td>
-       <td ng-if="!user.userdata">{{user.login}}</td>
-       <td>{{user.userdata.email}}</td>
-    </tr>
-    </tbody>
-</table>   
+	<thead>
+	<tr>
+	   <td>&nbsp;</th>
+	   <td>Login</th>
+	   <td>E-mail</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="user in users">
+	   <td><div class="round avatar-container"><img src="{{user.avatar_url}}"></img><div></td>
+	   <td ng-if="user.userdata"><a href="#/githubuser/{{user.login}}">{{user.login}}</a></td>
+	   <td ng-if="!user.userdata">{{user.login}}</td>
+	   <td>{{user.userdata.email}}</td>
+	</tr>
+	</tbody>
+</table>
 -->
 </section>
