@@ -1,6 +1,6 @@
 (function () {
     var githubUserController = function($scope, $routeParams, githubApiService){
-        
+
         var userName = $routeParams.userName;
         var fillRepos = function(githubuser){
             if (githubuser && githubuser.repos_url){
@@ -11,14 +11,14 @@
                 })
             }
         }
-        
+
         $scope.githubuser = githubApiService.getUserCashed(userName);
         console.log("Check if with repos");
-        console.log($scope.githubuser.repos);
-        
+        console.log($scope.githubuser);
+
         if ($scope.githubuser && !$scope.githubuser.repos) {
             console.log("check if repost cashe is working");
-            fillRepos($scope.githubuser);   
+            fillRepos($scope.githubuser);
         }
         if ((!$scope.githubuser||!$scope.githubuser.login) && userName){
             githubApiService.getUser(userName)
@@ -28,10 +28,10 @@
             })
             .error(function(data, status, headers, config){
                 $scope.githubuser = {};
-            });            
+            });
         }
     };
-    
+
     githubUserController.$inject = ['$scope','$routeParams', 'githubApiService'];
     angular.module('appMLSDevTA').controller('githubUserController',githubUserController);
 }());

@@ -1,15 +1,15 @@
 (function () {
     var githubApiService = function($http){
         var githubusers = [];
-        
+
         this.getUsersCashed = function(){
-            return  githubusers;   
+            return  githubusers;
         }
-        
+
         this.setUsersCashed = function(users){
             githubusers = users;
         }
-        
+
         this.getUserCashed = function(username){
             if (typeof githubusers.filter === "function" && username){
                 var filteredusers = githubusers.filter(function(element){
@@ -22,33 +22,40 @@
                 return {}
             }
         }
-        
+
         this.getUsers = function(){
           var users = $http.get('https://api.github.com/users');
-          return users;  
+          return users;
         };
         this.getUser = function(username){
           var user = $http.get('https://api.github.com/users/'+username);
           return user;
         };
-        
+
         this.getUserRepos = function(repolink){
           var repos = $http.get(repolink);
           return repos;
         };
-        
+
         this.setUserRepos = function(username, repos){
-            if (typeof githubusers.every === "function" && username){
+            if (1 === 2 && typeof githubusers.every === "function" && username){
                 githubusers.every(function(item, i, arr){
-                    if (item && item.login && item.login === username ){
+                    if (item.login === username ){
                         githubusers[i].userdata.repos = repos;
                         return false;
-                    } 
+                    }
                     else return true;
                 });
             }else{
-                return {}
+                for(var item in githubusers) {
+                    if (githubusers.hasOwnProperty(item)){
+                        if (githubusers[item].login === username ){
+                            githubusers[item].userdata.repos = repos;
+                        }
+                    }
+                }
             }
+            console.log({"users":githubusers});
         };
         this.getUserRepo = function(username,reponame){
           var repo = $http.get("https://api.github.com/repos/"+username+"/"+reponame);
@@ -74,18 +81,18 @@
                     });
                     if (filteredrepos && filteredrepos[0]) return filteredrepos[0]
                     else return{}
-                } 
+                }
                 else return {}
             }else{
                 return {}
             }
         };
-        
+
         this.getRepoCommits = function(user, repo){
           var commits = $http.get('https://api.github.com/repos/'+user+'/'+repo+'/commits');
           return commits;
         };
-        
+
 
     };
     githubApiService.$inject = ['$http'];
